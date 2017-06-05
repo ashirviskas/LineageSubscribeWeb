@@ -39,7 +39,7 @@ div {
 
 <body>
 <div>
-    <form method="POST" action="/subscribed/">
+    <form id="form1" method="POST" action="/subscribe/">
             <label for="device">Select device</label>
             <select class="browser-default" id="device" name="device">
                 <option value="" disabled selected="selected">Choose one</option>
@@ -48,7 +48,7 @@ div {
                 {% endfor %}
             </select>
             <label for="email">Email</label>
-            <input id="email" type="email" class="validate">
+            <input class="browser-default" id="email" name="email" type="email">
          <input type="submit" value="Subscribe">
     </form>
 </div>
