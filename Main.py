@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 def get_device_names():
     device_names = list(Releases_col.distinct('device', {}))
-    return device_names[:-1]
+    return sorted(device_names, key=str.lower)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -28,4 +28,6 @@ def subscribe():
     pprint(request.form)
     return "Ahoy, subbed " + device_name + " to " + user_email
 
-app.run(host= '0.0.0.0', port=80)
+
+if __name__ == "__main__":
+    app.run()
